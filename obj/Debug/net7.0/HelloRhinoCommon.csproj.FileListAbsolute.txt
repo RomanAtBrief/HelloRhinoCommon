@@ -12,3 +12,4 @@
 /Users/romangorshkov/Documents/GitHub/RhinoCommon/HelloRhinoCommon/obj/Debug/net7.0/HelloRhinoCommon.pdb
 /Users/romangorshkov/Documents/GitHub/RhinoCommon/HelloRhinoCommon/obj/Debug/net7.0/HelloRhinoCommon.genruntimeconfig.cache
 /Users/romangorshkov/Documents/GitHub/RhinoCommon/HelloRhinoCommon/obj/Debug/net7.0/ref/HelloRhinoCommon.rhp
+/Users/romangorshkov/Documents/GitHub/RhinoCommon/HelloRhinoCommon/obj/Debug/net7.0/HelloRhinoCommon.sourcelink.json

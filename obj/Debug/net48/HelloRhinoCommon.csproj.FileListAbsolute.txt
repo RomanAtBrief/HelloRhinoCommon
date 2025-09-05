@@ -7,3 +7,4 @@
 /Users/romangorshkov/Documents/GitHub/RhinoCommon/HelloRhinoCommon/obj/Debug/net48/HelloRhinoCommon.csproj.CoreCompileInputs.cache
 /Users/romangorshkov/Documents/GitHub/RhinoCommon/HelloRhinoCommon/obj/Debug/net48/HelloRhinoCommon.rhp
 /Users/romangorshkov/Documents/GitHub/RhinoCommon/HelloRhinoCommon/obj/Debug/net48/HelloRhinoCommon.pdb
+/Users/romangorshkov/Documents/GitHub/RhinoCommon/HelloRhinoCommon/obj/Debug/net48/HelloRhinoCommon.sourcelink.json
