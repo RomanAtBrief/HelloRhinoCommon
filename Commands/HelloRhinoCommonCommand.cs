@@ -6,7 +6,7 @@ using Rhino.Geometry;
 using Rhino.Input;
 using Rhino.Input.Custom;
 
-namespace HelloRhinoCommon
+namespace HelloRhinoCommon.Commands
 {
     public class HelloRhinoCommonCommand : Command
     {

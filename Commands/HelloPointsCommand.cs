@@ -8,7 +8,7 @@ using Rhino.Geometry;
 using Rhino.Commands;
 
 // Namespace
-namespace HelloRhinoCommon
+namespace HelloRhinoCommon.Commands
 {
     // 1. Create New class that inherits from Rhino Command
     public class HelloPointCommand : Command
