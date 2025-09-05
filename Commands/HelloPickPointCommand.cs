@@ -52,7 +52,7 @@ namespace HelloRhinoCommon.Commands
             var y = point.Y.ToString(format);
             var z = point.Z.ToString(format);
 
-            // Write in console
+            // Write in Rhino console
             RhinoApp.Write("World coordinates: {0}, {1}, {2}", x, y, z);
 
             // Return success
