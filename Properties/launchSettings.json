@@ -1,20 +1,28 @@
 {
   "profiles": {
-    "Rhino 8 - netcore": {
+    "Rhino 8 - Windows (netcore)": {
       "commandName": "Executable",
       "executablePath": "C:\\Program Files\\Rhino 8\\System\\Rhino.exe",
       "commandLineArgs": "/netcore",
       "environmentVariables": {
-        "RHINO_PACKAGE_DIRS": "$(ProjectDir)$(OutputPath)\\"
+        "RHINO_PACKAGE_DIRS": "$(ProjectDir)$(OutputPath)"
       }
     },
-    "Rhino 8 - netfx": {
+    "Rhino 8 - Windows (netfx)": {
       "commandName": "Executable",
-      "executablePath": "C:\\Program Files\\Rhino 8\\System\\Rhino.exe",
+      "executablePath": "C:\\Program Files\\Rhino 8\\System\\Rhino.exe", 
       "commandLineArgs": "/netfx",
       "environmentVariables": {
-        "RHINO_PACKAGE_DIRS": "$(ProjectDir)$(OutputPath)\\"
+        "RHINO_PACKAGE_DIRS": "$(ProjectDir)$(OutputPath)"
       }
     },
+    "Rhino 8 - Mac": {
+      "commandName": "Executable",
+      "executablePath": "/Applications/Rhino 8.app/Contents/MacOS/Rhinoceros",
+      "hotReloadEnabled": true,
+      "environmentVariables": {
+        "RHINO_PACKAGE_DIRS": "$(ProjectDir)$(OutputPath)"
+      }
+    }
   }
 }

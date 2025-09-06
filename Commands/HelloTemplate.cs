@@ -8,9 +8,9 @@ using Rhino.Input.Custom;
 
 namespace HelloRhinoCommon.Commands
 {
-    public class HelloRhinoCommonCommand : Command
+    public class HelloTemplate : Command
     {
-        public HelloRhinoCommonCommand()
+        public HelloTemplate()
         {
             // Rhino only creates one instance of each command class defined in a
             // plug-in, so it is safe to store a refence in a static property.
@@ -18,10 +18,10 @@ namespace HelloRhinoCommon.Commands
         }
 
         ///<summary>The only instance of this command.</summary>
-        public static HelloRhinoCommonCommand Instance { get; private set; }
+        public static HelloTemplate Instance { get; private set; }
 
         ///<returns>The command name as it appears on the Rhino command line.</returns>
-        public override string EnglishName => "HelloRhinoCommonCommand";
+        public override string EnglishName => "HelloTemplate";
 
         protected override Result RunCommand(RhinoDoc doc, RunMode mode)
         {

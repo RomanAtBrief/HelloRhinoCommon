@@ -14,19 +14,19 @@ using Rhino.Input;
 namespace HelloRhinoCommon.Commands
 {
     // 1. Create New class that inherits from Rhino Command
-    public class HelloPointPickerCommand : Command
+    public class HelloPointsPicker : Command
     {
         // 2. Create command constractor  
-        public HelloPointPickerCommand()
+        public HelloPointsPicker()
         {
             Instance = this;
         }
 
         // 3. Create the only instance of this command
-        public static HelloPointPickerCommand Instance { get; private set; }
+        public static HelloPointsPicker Instance { get; private set; }
 
         // 4. The command name as it appears on the Rhino command line
-        public override string EnglishName => "HelloPointPicker";
+        public override string EnglishName => "HelloPointsPicker";
 
         // 5. Actual command code
         protected override Result RunCommand(RhinoDoc doc, RunMode mode)
@@ -43,7 +43,7 @@ namespace HelloRhinoCommon.Commands
                 var getPoint = new GetPoint();
                 getPoint.SetCommandPrompt("Pick a point.");
 
-                // Get the result of picking a point. 
+                // Get the result of picking a point. "Picking" means picking a point location in Rhino viewport 
                 var result = getPoint.Get();
 
                 // Check if result has a point selected
