@@ -7,6 +7,7 @@ using Rhino;
 using Rhino.Geometry;
 using Rhino.Commands;
 using Rhino.Input.Custom;
+using Rhino.Display;
 
 // Namespace
 namespace HelloLevelPicker.Commands
@@ -31,6 +32,24 @@ namespace HelloLevelPicker.Commands
         {
             // Write to Rhino Console
             RhinoApp.WriteLine("Hello Level Picker Command");
+
+            // Create point
+            Point3d point = new Point3d(10, 0, 0);
+            
+            // Setup string
+            string text = "Hello RhinoCommon";
+
+            // Create dot
+            TextDot dot = new TextDot(text, point);
+            
+            // Add point
+            doc.Objects.AddPoint(point);
+
+            // Add dot
+            doc.Objects.AddTextDot(dot);
+            
+            // Refresh the viewport
+            doc.Views.Redraw();
 
             // Return success
             return Result.Success;
