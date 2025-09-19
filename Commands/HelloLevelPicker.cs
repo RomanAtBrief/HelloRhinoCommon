@@ -10,7 +10,7 @@ using Rhino.Input.Custom;
 using Rhino.Display;
 
 // Namespace
-namespace HelloLevelPicker.Commands
+namespace HelloRhinoCommon.Commands
 {
     // 1. Create New class that inherits from Rhino Command
     public class HelloLevelPicker : Command
