@@ -7,7 +7,8 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/Dotnet.gitignore
 
-## This example was copied from Grasshopper2ShapeToFab2025 : https://github.com/mcneel/Grasshopper2ShapeToFab2025/blob/main/.gitignore
+## This example was copied from Grasshopper2ShapeToFab2025 : 
+## https://github.com/mcneel/Grasshopper2ShapeToFab2025/blob/main/.gitignore
 
 # Build results
 [Dd]ebug/
