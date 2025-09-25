@@ -10,6 +10,7 @@ using Rhino.Input.Custom;
 using Rhino.Display;
 using Rhino.Collections;
 using Rhino.Input;
+using Rhino.DocObjects;
 
 // Namespace
 namespace HelloRhinoCommon.Commands
@@ -32,60 +33,48 @@ namespace HelloRhinoCommon.Commands
         // 5. Actual command code
         protected override Result RunCommand(RhinoDoc doc, RunMode mode)
         {
-            // Greet the user
+            // Create a place to store collection of footprint curves
+            CurveList fotprints = new CurveList();
 
-            // Select closed curves. Check if curve is closed, if not ignore
+            // GetObject class is the tool commands use to interactively select objects
+            GetObject getFootprint = new GetObject();
 
-            // Extrude to make a building
+            // Prompt user
+            getFootprint.SetCommandPrompt("Select closed curve footprints.");
 
-            // ---------------------------- 
-            // Select objects
-            // ----------------------------
+            // Filter only curves
+            getFootprint.GeometryFilter = ObjectType.Curve;
 
-            // Create a list to hold selected points
-            Point3dList points = new Point3dList();
+            // Allow to select multiple footprints / curves. 
+            // Specify min and max number of objects to select
+            getFootprint.GetMultiple(1, 0);
 
-            // Store command result
-            Result commandResult;
-
-            while (true)
+            // Check if selection was successful
+            if (getFootprint.CommandResult() != Result.Success)
             {
-                // Instantiate a GetPoint class / object
-                GetPoint getPoint = new GetPoint();
+                return getFootprint.CommandResult();
+            }
 
-                // Command Prompt
-                getPoint.SetCommandPrompt("Pick a point.");
+            // Loop over all selected footprints and extrude
+            for (int i = 0; i < getFootprint.ObjectCount; i++)
+            {
+                // Extract curve from GetObject, getFootprint
+                Curve footprint = getFootprint.Object(i).Curve();
 
-                // Retrive point. 
-                // Get() returns GetResult that can tell us what object was selected
-                GetResult result = getPoint.Get();
-
-                // Test if selection returns point
-                if (result == GetResult.Point)
+                // Check if there is curve
+                if (footprint != null)
                 {
-                    // Add point to Rhino document
-                    doc.Objects.AddPoint(getPoint.Point());
-                    doc.Views.Redraw();
-                    points.Add(getPoint.Point());
-                    commandResult = Result.Success;
-                }
-                else if (result == GetResult.Nothing)
-                {
-                    commandResult = Result.Failure;
-                    break;
-                }
-                else
-                {
-                    commandResult = Result.Cancel;
-                    break;
+                    Random random = new Random();
+                    Extrusion massing = Extrusion.Create(footprint, random.Next(5, 10), true);
+                    doc.Objects.AddExtrusion(massing);
                 }
             }
 
-            // Write to Rhino console
-            RhinoApp.WriteLine("User selected {0} points", points.Count.ToString());
-            
+            // Redraw view
+            doc.Views.Redraw();
+
             // Return success
-            return commandResult;
+            return Result.Success;
         }
     }
 }
